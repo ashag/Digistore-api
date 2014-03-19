@@ -4,6 +4,9 @@ class CartsController < ApplicationController
   end
 
   def create
+    @cart = Cart.new
+    @cart.save
+    render :show
   end
 
   def update

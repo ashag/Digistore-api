@@ -1,4 +1,8 @@
 json.cart do
   json.id @cart.id
-  json.order @cart.order_id
+  items_array = []
+  @cart.items.each do |item|
+    items_array << item.id
+  end
+  json.items items_array
 end

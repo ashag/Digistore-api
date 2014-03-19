@@ -4,7 +4,7 @@ ProductApi::Application.routes.draw do
     # root to: 'products#index'
     resources :carts, only: [:show, :create, :update, :destroy]
     resources :orders, only: [:show, :create]
-    resources :items, only: [:show, :update, :create, :destroy]
+    resources :items, only: [:index, :show, :update, :create, :destroy]
     resources :products, only: [:index, :show, :create, :update, :destroy]
 
   end
