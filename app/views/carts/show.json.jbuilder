@@ -1,2 +1,4 @@
-json.extract! cart, :id
-json.items @cart.items.pluck(:id)
+json.cart do
+  json.id @cart.id
+  json.order @cart.order_id
+end

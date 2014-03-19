@@ -1,15 +1,12 @@
 ProductApi::Application.routes.draw do
 
-
-  get "carts/index"
-  get "carts/create"
-  get "carts/update"
-  get "carts/destroy"
-  get "orders/index"
-  get "orders/create"
   defaults format: :json do
-    root to: 'products#index'
-    get 'products'      => 'products#index'
+    # root to: 'products#index'
+    resources :carts, only: [:show, :create, :update, :destroy]
+    resources :orders, only: [:show, :create]
+    resources :items, only: [:show, :update, :create, :destroy]
+    resources :products, only: [:index, :show, :create, :update, :destroy]
+
   end
 
 

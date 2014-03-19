@@ -1,4 +1,4 @@
 json.product @products do |product|
-  json.extract! product, :artist, :description, :price, :image 
+  json.extract! product, :id, :artist, :description, :price, :image 
 end
 
