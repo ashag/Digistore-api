@@ -1,3 +1,12 @@
-json.extract! order, :customerName, :email, :total, :status, :cc_info, :cc_cvv, :cc_exp, :zip_code, :transaction
-json.cart @order.cart_id 
-
+json.order do
+  json.cart @order.cart
+  json.id @order.id
+  json.artist @order.customerName
+  json.description @order.email
+  json.price @order.total
+  json.image @order.status
+  json.cc_info @order.cc_info
+  json.cc_cvv @order.cc_cvv
+  json.cc_exp @order.cc_exp
+  json.zip_code @order.zip_code
+end
